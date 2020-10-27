@@ -12,19 +12,7 @@
     />
 </head>
 <body>
-    <div id="container-custom">
 
-    </div>
-
-        <!-- <div class="card" style="width: 18rem;">
-            <img src="https://picsum.photos/id/1/200/200" class="card-img-top" alt="...">
-            <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">warna</p>
-                <p class="card-text">nama latin</p>
-                <p class="card-text">tipe biji</p>
-            </div>
-        </div> -->
 <script>
     var buah =[
         {
@@ -32,62 +20,40 @@
             warna:"merah",
             namaLatin:"apel1",
             tipeBiji:"tunggal",
-            gambar:"https://picsum.photos/id/1/200/200"
+            gambar:"https://picsum.photos/200/200"
         },
         {
             nama:"jeruk",
             warna:"orange",
             namaLatin:"jeruk1",
             tipeBiji:"tunggal",
-            gambar:"https://picsum.photos/id/1/200/200"
+            gambar:"https://picsum.photos/200/200"
         },
         {
             nama:"mangga",
             warna:"hijau",
             namaLatin:"mangga1",
             tipeBiji:"tunggal",
-            gambar:"https://picsum.photos/id/1/200/200"
+            gambar:"https://picsum.photos/200/200"
         }
     ]
 
-    var contain=document.getElementById("container-custom")
-
-    
-
-
-    var card1=document.createElement("div")
-        card1.className="card"
-        card1.style.width="18rem"
-
-    var cardImg=document.createElement("img")
-        cardImg.className="card-img-top"
-        cardImg.src="https://picsum.photos/id/1/200/200"
-
-    var card2=document.createElement("div")
-        card2.className="card-body"
-
-    var cardName=document.createElement("h5")
-        cardName.className="card-title"
-
-    var cardWarna=document.createElement("p")
-        cardWarna.className="card-text"
-        
-    var cardLatin=document.createElement("p")
-        cardLatin.className="card-text"
-
-    var cardBiji=document.createElement("p")
-        cardBiji.className="card-text"
-    
-
-    card2.appendChild(cardName)
-    card2.appendChild(cardWarna)
-    card2.appendChild(cardLatin)
-    card2.appendChild(cardBiji)
-    
-    card1.appendChild(cardImg)
-    card1.appendChild(card2)
-
-    contain.appendChild(card1)
+    let body = document.getElementsByTagName("body")[0];
+    for (let i=0; i<buah.length;i++){
+        const data=
+        `
+        <div class="card" style="width: 18rem;">
+            <img src="${buah[i].gambar}" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">${buah[i].nama}</h5>
+                <p class="card-text">${buah[i].warna}</p>
+                <p class="card-text">${buah[i].namaLatin}</p>
+                <p class="card-text">${buah[i].tipeBiji}</p>
+            </div>
+        </div>
+        `;
+        body.innerHTML+=data
+    }
 
 
 
